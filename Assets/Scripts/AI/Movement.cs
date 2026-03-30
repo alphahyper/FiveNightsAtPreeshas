@@ -25,13 +25,14 @@ public class Movement : MonoBehaviour
         timeLeft -= Time.deltaTime;
         if (timeLeft <= 0)
         {
-            moveRoom(ref room);
+            MoveRoom(ref room);
             timeLeft = Random.Range(minTime, maxTime);
         }
     }
 
     // Moves the AI to the next room
-    void moveRoom(ref int room)
+    // CHANGE WHEN MODELS ARE MADE
+    void MoveRoom(ref int room)
     {
         Debug.Log($"Moved to room {room + 1}");
         room++;
