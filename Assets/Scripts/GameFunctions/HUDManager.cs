@@ -7,24 +7,39 @@ using UnityEngine.UI;
 
 public class HUDManager : MonoBehaviour
 {
-    public static TextMeshPro clock;
-    public static TextMeshPro power;
+    public TextMeshPro clock;
+    public TextMeshPro power;
+    public TextMeshPro[] HUDS = new TextMeshPro[1];
+    public Canvas officeHUD;
 
+
+    private void Start()
+    {
+        Debug.Log(officeHUD.tag);
+        HUDS = officeHUD.GetComponents<TextMeshPro>();
+        Debug.Log(HUDS.Length);
+        /*foreach (TextMeshPro text in HUDS) {
+            Debug.Log(text.name);
+            //if (text.name == "powerText") power = text;
+            //else if (text.name == "clockText") clock = text;
+        }*/
+        
+    }
     // Changes clock HUD
-    public static void ChangeTimer(int hour)
+    public void ChangeTimer(int hour)
     {
         clock.text = hour.ToString() + " AM";
     }
 
     // Changes power HUD
-    public static void ChangePower(int battery)
+    public void ChangePower(int battery)
     {
         power.text = battery.ToString() + "%";
     }
 
     // Changes icon for battery
     // TODO: CHANGE WHEN ICONS ARE MADE
-    public static void ChangeBatteryUsage(int battery)
+    public void ChangeBatteryUsage(int battery)
     {
 
     }
@@ -35,26 +50,26 @@ public class HUDManager : MonoBehaviour
      */
 
     // Shows the HUD for the menu
-    public static void ShowMenuHUD()
+    public void ShowMenuHUD()
     {
         clock.enabled = true;
         power.enabled = true;
     }
     // Hides the HUD for the menu
-    public static void HideMenuHUD()
+    public void HideMenuHUD()
     {
         clock.enabled = false;
         power.enabled = false;
     }
 
     // Shows the HUD for the actual gameplay
-    public static void ShowOfficeHUD()
+    public void ShowOfficeHUD()
     {
         clock.enabled = true;
         power.enabled = true;
     }
     // Hides the HUD for the actual gameplay
-    public static void HideOfficeHUD()
+    public void HideOfficeHUD()
     {
         clock.enabled = false;
         power.enabled = false;

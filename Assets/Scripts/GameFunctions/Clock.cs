@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Clock : MonoBehaviour
 {
+    public GameManager GameManager;
     static float clockTime;
     static int hourDisplay;
     static bool startCount;  // Determines whether the timer runs or not

@@ -5,15 +5,17 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public HUDManager HUDManager;
     static int night;
 
     void Start()
     {
+        HUDManager = GetComponent<HUDManager>();
         night = 0;
     }
 
     // Starts the night that is listed
-    public static void StartNight(int num)
+    public void StartNight(int num)
     {
         night = num;
         HUDManager.ShowOfficeHUD();
@@ -22,7 +24,7 @@ public class GameManager : MonoBehaviour
 
     // TODO: Finish this when HUD has been made
     // Tells the game to complete the night
-    public static void FinishNight()
+    public void FinishNight()
     {
         HUDManager.HideOfficeHUD();  // Hides office HUD
     }
