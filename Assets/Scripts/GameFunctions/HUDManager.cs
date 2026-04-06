@@ -7,23 +7,23 @@ using UnityEngine.UI;
 
 public class HUDManager : MonoBehaviour
 {
-    public TextMeshPro clock;
-    public TextMeshPro power;
-    public TextMeshPro[] HUDS = new TextMeshPro[1];
+    // Office HUD
     public Canvas officeHUD;
+    private TMP_Text clock;
+    private TMP_Text power;
 
 
     private void Start()
     {
-        Debug.Log(officeHUD.tag);
-        HUDS = officeHUD.GetComponents<TextMeshPro>();
-        Debug.Log(HUDS.Length);
-        /*foreach (TextMeshPro text in HUDS) {
-            Debug.Log(text.name);
-            //if (text.name == "powerText") power = text;
-            //else if (text.name == "clockText") clock = text;
-        }*/
-        
+        Transform panel;
+        // Assigns all office HUDs
+        panel = officeHUD.transform.Find("Panel");
+        foreach (Transform child in panel) {
+            Debug.Log(child.name);
+            if (child.name.Equals("PowerText")) power = child.GetComponent<TMP_Text>();
+            else if (child.name.Equals("ClockText")) clock = child.GetComponent<TMP_Text>();
+        }
+
     }
     // Changes clock HUD
     public void ChangeTimer(int hour)

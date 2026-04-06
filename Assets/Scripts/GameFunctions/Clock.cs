@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class Clock : MonoBehaviour
 {
-    public GameManager GameManager;
+    private GameManager gameManager;
+    private HUDManager hudManager;
     static float clockTime;
     static int hourDisplay;
     static bool startCount;  // Determines whether the timer runs or not
 
     void Start()
     {
+        // TODO: Attach HUD and GAME managers to their vars, then test if they can be accessed
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        hudManager = GameObject.Find("GameManager").GetComponent<HUDManager>();
         clockTime = 0f;
         hourDisplay = 0;
         startCount = false;
@@ -25,13 +29,14 @@ public class Clock : MonoBehaviour
             if (clockTime >= 90)
             {
                 hourDisplay += 1;
+
                 clockTime = 0f;
             }
 
             // Finishes when clock reaches 6 AM
             if (clockTime >= 6)
             {
-                GameManager.FinishNight();
+                gameManager.FinishNight();
                 startCount = false;
             }
         }
