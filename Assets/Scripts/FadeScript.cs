@@ -20,7 +20,7 @@ public class FadeScript : MonoBehaviour
     public void FadeOut()
     {
         // Fade out to 0 alpha over 1 second
-        myText.CrossFadeAlpha(0f, 3f, false);
+        myText.CrossFadeAlpha(0f, 2f, false);
     }
 
     public void FadeIn()
