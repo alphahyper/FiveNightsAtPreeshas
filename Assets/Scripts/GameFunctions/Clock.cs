@@ -28,7 +28,6 @@ public class Clock : MonoBehaviour
             if (clockTime >= 2f)
             {
                 hourDisplay += 1;
-                Debug.Log(hourDisplay);
                 hudManager.ChangeTimer(hourDisplay);
 
                 clockTime = 0f;
