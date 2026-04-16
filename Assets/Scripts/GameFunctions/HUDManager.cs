@@ -12,6 +12,21 @@ public class HUDManager : MonoBehaviour
     private TMP_Text clock;
     private TMP_Text power;
 
+    public static HUDManager Instance { get; private set; }  // Instance of this HUDManager
+
+    private void Awake()  // Creates a singleton
+    {
+        // If an instance already exists and it's not this one, destroy this duplicate
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        // Set the instance and ensure it persists across scene loads
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
 
     private void Start()
     {
