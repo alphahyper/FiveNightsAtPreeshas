@@ -14,7 +14,7 @@ public class FadeScript : MonoBehaviour
         myText.canvasRenderer.SetAlpha(0f);
         // Fade in to full (1 alpha) over 2 seconds
         Invoke(nameof(FadeIn), 1f);
-        Invoke(nameof(FadeOut), 3f);
+        Invoke(nameof(FadeOut), 5f);
     }
 
     public void FadeOut()
