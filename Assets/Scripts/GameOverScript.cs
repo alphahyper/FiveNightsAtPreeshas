@@ -10,7 +10,7 @@ public class GameOverScript : MonoBehaviour
 {
     public Text gameOverText;
     // Start is called before the first frame update
-    async Task Start()
+    async void Start()
     {
         // Fade to invisible (0 alpha) immediately
         gameOverText.canvasRenderer.SetAlpha(0f);
