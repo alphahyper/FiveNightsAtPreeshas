@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         HUDManager = GetComponent<HUDManager>();
+        StartNight(0);
         night = 0;
     }
 
