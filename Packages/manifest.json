@@ -1,8 +1,4 @@
 {
-<<<<<<< HEAD
-	"dependencies": {
-	}
-=======
   "dependencies": {
     "com.unity.collab-proxy": "2.12.4",
     "com.unity.feature.development": "1.0.2",
@@ -44,5 +40,4 @@
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
   }
->>>>>>> 8d7180436f6ba128989e21a0d37b666486e62e33
 }
