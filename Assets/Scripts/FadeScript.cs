@@ -6,15 +6,18 @@ using static Unity.Collections.AllocatorManager;
 
 public class FadeScript : MonoBehaviour
 {
+    public GameManager gameManager;
     public Text myText;
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         // Fade to invisible (0 alpha) immediately
         myText.canvasRenderer.SetAlpha(0f);
         // Fade in to full (1 alpha) over 2 seconds
         Invoke(nameof(FadeIn), 1f);
         Invoke(nameof(FadeOut), 5f);
+        gameManager.StartSchoolScene();
     }
 
     public void FadeOut()

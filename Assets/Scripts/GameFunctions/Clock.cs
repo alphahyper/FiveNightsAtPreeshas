@@ -25,7 +25,7 @@ public class Clock : MonoBehaviour
         {
             clockTime += Time.deltaTime;
             // Every 90 sec is 1 hour in-game
-            if (clockTime >= 2f)
+            if (clockTime >= 1f)
             {
                 hourDisplay += 1;
                 hudManager.ChangeTimer(hourDisplay);

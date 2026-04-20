@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -25,15 +26,19 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         HUDManager = GetComponent<HUDManager>();
-        StartNight(0);
-        night = 0;
+        night = 1;
+        Debug.Log(SceneManager.GetActiveScene());
     }
+    
+
 
     // Starts the night that is listed
     public void StartNight(int num)
     {
         night = num;
-        HUDManager.ShowOfficeHUD();
+        //HUDManager.LoadHUD("School");
+        //HUDManager.ShowOfficeHUD();
+        Debug.Log("office shown");
         Clock.Restart();
     }
 
@@ -44,6 +49,30 @@ public class GameManager : MonoBehaviour
         HUDManager.HideOfficeHUD();  // Hides office HUD
     }
 
+    
+    public void StartNightScene()
+    {
+        SceneManager.LoadScene("Night Scene");
+    }
+    public void StartSchoolScene()
+    {
+        SceneManager.LoadScene("School");
+        StartNight(night++);
+    }
 
 
+    // Waits until scene is loaded
+    IEnumerator LoadAsync(string sceneName)
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
+
+        // Wait until the scene is fully loaded
+        while (!operation.isDone)
+        {
+            // You can track operation.progress here (0.0 to 0.9)
+            yield return null;
+        }
+
+        Debug.Log("Scene fully loaded!");
+    }
 }

@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.Hierarchy;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class HUDManager : MonoBehaviour
 {
     // Office HUD
-    public Canvas officeHUD;
     private TMP_Text clock;
     private TMP_Text power;
 
@@ -30,13 +30,29 @@ public class HUDManager : MonoBehaviour
 
     private void Start()
     {
+
+    }
+
+    // Loads an HUD
+    public void LoadHUD(string scene)
+    {
+        GameObject[] objects = SceneManager.GetSceneByName("School").GetRootGameObjects();
         Transform panel;
-        // Assigns all office HUDs
-        panel = officeHUD.transform.Find("Panel");
-        foreach (Transform child in panel) {
-            Debug.Log(child.name);
-            if (child.name.Equals("PowerText")) power = child.GetComponent<TMP_Text>();
-            else if (child.name.Equals("ClockText")) clock = child.GetComponent<TMP_Text>();
+        Debug.Log(objects[0]);
+        // Assigns all HUDs
+        foreach (GameObject obj in objects)
+        {
+            Debug.Log(obj.name);
+            if (obj.name.Equals("HUD"))
+            {
+                panel = obj.GetComponent<Canvas>().transform.Find("Panel");
+                foreach (Transform child in panel)
+                {
+                    Debug.Log(child.name);
+                    if (child.name.Equals("PowerText")) power = child.GetComponent<TMP_Text>();
+                    else if (child.name.Equals("ClockText")) clock = child.GetComponent<TMP_Text>();
+                }
+            }
         }
 
     }
