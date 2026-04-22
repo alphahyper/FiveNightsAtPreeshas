@@ -5,6 +5,7 @@ using Unity.Hierarchy;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static UnityEngine.Rendering.DebugUI;
 
 public class HUDManager : MonoBehaviour
 {
@@ -28,34 +29,25 @@ public class HUDManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    // Loads HUD
     private void Start()
     {
-
+        
     }
 
-    // Loads an HUD
-    public void LoadHUD(string scene)
+    public void LoadOfficeHUD()
     {
-        GameObject[] objects = SceneManager.GetSceneByName("School").GetRootGameObjects();
         Transform panel;
-        Debug.Log(objects[0]);
-        // Assigns all HUDs
-        foreach (GameObject obj in objects)
+        panel = GameObject.Find("HUD").transform.Find("Panel");
+        foreach (Transform child in panel)
         {
-            Debug.Log(obj.name);
-            if (obj.name.Equals("HUD"))
-            {
-                panel = obj.GetComponent<Canvas>().transform.Find("Panel");
-                foreach (Transform child in panel)
-                {
-                    Debug.Log(child.name);
-                    if (child.name.Equals("PowerText")) power = child.GetComponent<TMP_Text>();
-                    else if (child.name.Equals("ClockText")) clock = child.GetComponent<TMP_Text>();
-                }
-            }
+            Debug.Log(child.name);
+            if (child.name.Equals("PowerText")) power = child.GetComponent<TMP_Text>();
+            else if (child.name.Equals("ClockText")) clock = child.GetComponent<TMP_Text>();
         }
-
     }
+
+ 
     // Changes clock HUD
     public void ChangeTimer(int hour)
     {

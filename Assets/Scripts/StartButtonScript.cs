@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class StartButtonScript : MonoBehaviour
 {
+    GameManager gameManager;
     public void startGame()
     {
         SceneManager.LoadScene("Night Scene");

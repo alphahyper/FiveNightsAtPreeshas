@@ -25,20 +25,18 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-        HUDManager = GetComponent<HUDManager>();
-        night = 1;
-        Debug.Log(SceneManager.GetActiveScene());
+        
     }
-    
+
 
 
     // Starts the night that is listed
     public void StartNight(int num)
     {
         night = num;
-        //HUDManager.LoadHUD("School");
-        //HUDManager.ShowOfficeHUD();
-        Debug.Log("office shown");
+        HUDManager = GetComponent<HUDManager>();
+        night = 1;
+        Debug.Log(SceneManager.GetActiveScene());
         Clock.Restart();
     }
 
@@ -47,32 +45,5 @@ public class GameManager : MonoBehaviour
     public void FinishNight()
     {
         HUDManager.HideOfficeHUD();  // Hides office HUD
-    }
-
-    
-    public void StartNightScene()
-    {
-        SceneManager.LoadScene("Night Scene");
-    }
-    public void StartSchoolScene()
-    {
-        SceneManager.LoadScene("School");
-        StartNight(night++);
-    }
-
-
-    // Waits until scene is loaded
-    IEnumerator LoadAsync(string sceneName)
-    {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
-
-        // Wait until the scene is fully loaded
-        while (!operation.isDone)
-        {
-            // You can track operation.progress here (0.0 to 0.9)
-            yield return null;
-        }
-
-        Debug.Log("Scene fully loaded!");
     }
 }

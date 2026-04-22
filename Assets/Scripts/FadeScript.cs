@@ -17,7 +17,6 @@ public class FadeScript : MonoBehaviour
         // Fade in to full (1 alpha) over 2 seconds
         Invoke(nameof(FadeIn), 1f);
         Invoke(nameof(FadeOut), 5f);
-        gameManager.StartSchoolScene();
     }
 
     public void FadeOut()
