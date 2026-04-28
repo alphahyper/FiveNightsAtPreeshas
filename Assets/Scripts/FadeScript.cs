@@ -22,7 +22,9 @@ public class FadeScript : MonoBehaviour
         Invoke(nameof(FadeIn), 1f);
         Invoke(nameof(FadeOut), 5f);
         await Task.Delay(8000);
-        SceneManager.LoadScene("School");
+        SceneManager.LoadScene("School");  // Loads school, then waits and loads night
+        await Task.Delay(200);
+        GameManager.StartNight(GameManager.night++);
     }
 
     public void FadeOut()
