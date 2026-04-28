@@ -6,12 +6,16 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static Unity.Collections.AllocatorManager;
 
+
 public class FadeScript : MonoBehaviour
 {
+    public static int nightNumber = 0;
     public Text myText;
     // Start is called before the first frame update
     async void Start()
     {
+        nightNumber++;
+        myText.text = "Night " + nightNumber;
         // Fade to invisible (0 alpha) immediately
         myText.canvasRenderer.SetAlpha(0f);
         // Fade in to full (1 alpha) over 2 seconds
