@@ -46,7 +46,7 @@ public class HUDManager : MonoBehaviour
         power = panel.transform.Find("PowerText").GetComponent<TMP_Text>();
         clock = panel.transform.Find("ClockText").GetComponent<TMP_Text>();
         // TODO: fix the transform
-        //batteries = HUD.transform.Find("UsageText").GetComponentsInChildren<Transform>(true);
+        batteries = panel.transform.Find("UsageText").GetComponentsInChildren<Transform>();
     }
 
  
@@ -59,7 +59,6 @@ public class HUDManager : MonoBehaviour
     // Changes power HUD
     public static void ChangePower(int battery)
     {
-        Debug.Log(battery);
         power.text = "Power:" + battery.ToString() + "%";
     }
 
@@ -67,7 +66,14 @@ public class HUDManager : MonoBehaviour
     // TODO: CHANGE WHEN ICONS ARE MADE
     public static void ChangeBatteryUsage(int battery)
     {
-        batteries[battery].gameObject.SetActive(false);
+        for (int i = 5; i > battery; i--)
+        {
+            batteries[i].gameObject.SetActive(false);
+        }
+        for (int i = battery;i > 0; i--)
+        {
+            batteries[i].gameObject.SetActive(true);
+        }
     }
 
     
