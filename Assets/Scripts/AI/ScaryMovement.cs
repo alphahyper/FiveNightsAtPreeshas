@@ -42,7 +42,6 @@ public class Movement : MonoBehaviour
         {
             if (rm.name == roomName)
             {
-                Debug.Log(rm.name);
                 transform.position = rm.position;
                 break;
             }
