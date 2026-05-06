@@ -13,6 +13,7 @@ public class Power : MonoBehaviour
     {
         power = 100.00f;
         powerLeft = 99;
+        
     }
 
     // Update is called once per frame
@@ -37,6 +38,14 @@ public class Power : MonoBehaviour
     {
         power = 100.00f;
         powerLeft = 99;
+        usage = 1;
+        ChangeUsage(usage);
         startCount = true;
+    }
+
+    public static void ChangeUsage(int use)
+    {
+        usage = use;
+        HUDManager.ChangeBatteryUsage(usage);
     }
 }
