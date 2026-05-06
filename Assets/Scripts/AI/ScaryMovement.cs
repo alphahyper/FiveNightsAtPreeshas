@@ -8,14 +8,18 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    private int[] roomIndices;
     private int room;
+    private Vector3 roomPos;
     private float timeLeft;
     private float minTime, maxTime;
     // Start is called before the first frame update
     void Start()
     {
+        roomIndices = new int[] {14,4,12,13,9,8,1,2};
         room = 0;
-        minTime = 2f; maxTime = 10f;  // CHANGES TIMER
+        MoveRoom(ref room);
+        minTime = 2f; maxTime = 3f;  // CHANGES TIMER
         timeLeft = Random.Range(minTime, maxTime);
     }
 
@@ -31,10 +35,17 @@ public class Movement : MonoBehaviour
     }
 
     // Moves the AI to the next room
-    // CHANGE WHEN MODELS ARE MADE
     void MoveRoom(ref int room)
     {
-        Debug.Log($"Moved to room {room + 1}");
-        room++;
+        String roomName = MovementManager.roomPairs[roomIndices[room++ % roomIndices.Length]];
+        foreach (Transform rm in MovementManager.rooms)
+        {
+            if (rm.name == roomName)
+            {
+                Debug.Log(rm.name);
+                transform.position = rm.position;
+                break;
+            }
+        }
     }
 }
