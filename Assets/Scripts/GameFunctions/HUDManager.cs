@@ -40,9 +40,8 @@ public class HUDManager : MonoBehaviour
     public static void LoadOfficeHUD()
     {
         HUD = GameObject.Find("HUD");
-        Debug.Log(HUD);
         Transform panel;
-        panel = HUD.transform.Find("Panel");
+        panel = HUD.transform.Find("NormalHUD");
         power = panel.transform.Find("PowerText").GetComponent<TMP_Text>();
         clock = panel.transform.Find("ClockText").GetComponent<TMP_Text>();
         // TODO: fix the transform
