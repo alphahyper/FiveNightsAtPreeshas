@@ -40,9 +40,8 @@ public class HUDManager : MonoBehaviour
     public static void LoadOfficeHUD()
     {
         HUD = GameObject.Find("HUD");
-        Debug.Log(HUD);
         Transform panel;
-        panel = HUD.transform.Find("Panel");
+        panel = HUD.transform.Find("NormalHUD");
         power = panel.transform.Find("PowerText").GetComponent<TMP_Text>();
         clock = panel.transform.Find("ClockText").GetComponent<TMP_Text>();
         // TODO: fix the transform
@@ -99,11 +98,13 @@ public class HUDManager : MonoBehaviour
     {
         clock.enabled = true;
         power.enabled = true;
+        GameObject.Find("HUD").transform.Find("Panel").transform.Find("UsageText").gameObject.SetActive(true);
     }
     // Hides the HUD for the actual gameplay
     public static void HideOfficeHUD()
     {
         clock.enabled = false;
         power.enabled = false;
+        GameObject.Find("HUD").transform.Find("Panel").transform.Find("UsageText").gameObject.SetActive(false);
     }
 }
