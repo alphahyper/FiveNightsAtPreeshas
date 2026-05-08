@@ -40,6 +40,7 @@ public class CameraControls : MonoBehaviour
         camera8.enabled = false;
         camera9.enabled = false;
         mainCamera.enabled = true;
+        FaceCamera.ChangeCurrentCamera(Camera.main.transform);
     }
 
     public void RightCamera()
@@ -63,54 +64,63 @@ public class CameraControls : MonoBehaviour
             camera1.enabled = true;
             camera9.enabled = false;
             camera2.enabled = false;
+            FaceCamera.ChangeCurrentCamera(camera1.transform);
         }
         else if (count % 9 == 1)
         {
             camera2.enabled = true;
             camera1.enabled = false;
             camera3.enabled = false;
+            FaceCamera.ChangeCurrentCamera(camera2.transform);
         }
         else if (count % 9 == 2)
         {
             camera3.enabled = true;
             camera2.enabled = false;
             camera4.enabled = false;
+            FaceCamera.ChangeCurrentCamera(camera3.transform);
         }
         else if (count % 9 == 3)
         {
             camera4.enabled = true;
             camera3.enabled = false;
             camera5.enabled = false;
+            FaceCamera.ChangeCurrentCamera(camera4.transform);
         }
         else if (count % 9 == 4)
         {
             camera5.enabled = true;
             camera4.enabled = false;
             camera6.enabled = false;
+            FaceCamera.ChangeCurrentCamera(camera5.transform);
         }
         else if (count % 9 == 5)
         {
             camera6.enabled = true;
             camera5.enabled = false;
             camera7.enabled = false;
+            FaceCamera.ChangeCurrentCamera(camera6.transform);
         }
         else if (count % 9 == 6)
         {
             camera7.enabled = true;
             camera6.enabled = false;
             camera8.enabled = false;
+            FaceCamera.ChangeCurrentCamera(camera7.transform);
         }
         else if (count % 9 == 7)
         {
             camera8.enabled = true;
             camera7.enabled = false;
             camera9.enabled = false;
+            FaceCamera.ChangeCurrentCamera(camera8.transform);
         }
         else if (count % 9 == 8)
         {
             camera9.enabled = true;
             camera8.enabled = false;
             camera1.enabled = false;
+            FaceCamera.ChangeCurrentCamera(camera9.transform);
         }
     }
 }

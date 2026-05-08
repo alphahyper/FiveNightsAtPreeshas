@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class FaceCamera : MonoBehaviour
 {
-    public Transform camera;
+    public static Transform camera;
     // Start is called before the first frame update
     void Start()
     {
-        
+        camera = Camera.main.transform;
     }
 
     // Update is called once per frame
@@ -16,5 +16,10 @@ public class FaceCamera : MonoBehaviour
     {
         transform.LookAt(camera.position,worldUp:Vector3.forward);
         transform.rotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y, 0);
+    }
+
+    public static void ChangeCurrentCamera(Transform cam)
+    {
+        camera = cam;
     }
 }
