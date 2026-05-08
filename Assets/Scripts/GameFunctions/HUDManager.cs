@@ -96,6 +96,7 @@ public class HUDManager : MonoBehaviour
     // Shows the HUD for the actual gameplay
     public static void ShowOfficeHUD()
     {
+        HUD.SetActive(true);
         clock.enabled = true;
         power.enabled = true;
         GameObject.Find("HUD").transform.Find("Panel").transform.Find("UsageText").gameObject.SetActive(true);
@@ -103,8 +104,9 @@ public class HUDManager : MonoBehaviour
     // Hides the HUD for the actual gameplay
     public static void HideOfficeHUD()
     {
-        clock.enabled = false;
-        power.enabled = false;
-        GameObject.Find("HUD").transform.Find("Panel").transform.Find("UsageText").gameObject.SetActive(false);
+        HUD.SetActive(false);
+        //clock.enabled = false;
+        //power.enabled = false;
+        //GameObject.Find("HUD").transform.Find("Panel").transform.Find("UsageText").gameObject.SetActive(false);
     }
 }
