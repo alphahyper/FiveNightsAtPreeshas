@@ -6,13 +6,14 @@ public class Power : MonoBehaviour
 {
     static float power;
     static int powerLeft;
-    static int usage;
+    public static int usage;
     static bool startCount = false;
     // Start is called before the first frame update
     void Start()
     {
         power = 100.00f;
         powerLeft = 99;
+        usage = 1;
         
     }
 
@@ -45,7 +46,10 @@ public class Power : MonoBehaviour
 
     public static void ChangeUsage(int use)
     {
-        usage = use;
-        HUDManager.ChangeBatteryUsage(usage);
+        if (use <= 5 || use >= 1)
+        {
+            usage = use;
+            HUDManager.ChangeBatteryUsage(usage);
+        }
     }
 }

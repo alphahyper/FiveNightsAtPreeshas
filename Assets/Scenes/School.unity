@@ -1304,6 +1304,7 @@ MonoBehaviour:
   doorMaterial: {fileID: 2100000, guid: 7ee744a7325dd05428af629184b400ec, type: 2}
   transparent: {fileID: 2100000, guid: c5a65e46b95ff9844bd7400420508bf2, type: 2}
   door: {fileID: 0}
+  count: 0
 --- !u!43 &28654968
 Mesh:
   m_ObjectHideFlags: 0
@@ -22152,6 +22153,7 @@ MonoBehaviour:
   doorMaterial: {fileID: 2100000, guid: 7ee744a7325dd05428af629184b400ec, type: 2}
   transparent: {fileID: 2100000, guid: c5a65e46b95ff9844bd7400420508bf2, type: 2}
   door: {fileID: 195066158}
+  count: 0
 --- !u!65 &472898740
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29096,6 +29098,7 @@ MonoBehaviour:
   doorMaterial: {fileID: 2100000, guid: 7ee744a7325dd05428af629184b400ec, type: 2}
   transparent: {fileID: 2100000, guid: c5a65e46b95ff9844bd7400420508bf2, type: 2}
   door: {fileID: 1948031691}
+  count: 0
 --- !u!1 &622070035
 GameObject:
   m_ObjectHideFlags: 0
@@ -32866,6 +32869,7 @@ GameObject:
   - component: {fileID: 694459979}
   - component: {fileID: 694459978}
   - component: {fileID: 694459977}
+  - component: {fileID: 694459981}
   m_Layer: 0
   m_Name: Sargsyan
   m_TagString: Untagged
@@ -32946,12 +32950,25 @@ Transform:
   m_GameObject: {fileID: 694459975}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.17, y: 7.01, z: 15.57}
+  m_LocalPosition: {x: -20.67, y: 0.52, z: 28.18}
   m_LocalScale: {x: 0.75, y: 0.75, z: 0.05}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &694459981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694459975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dc4738ea1d920548a071e673b8770e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sargsyanFace: {fileID: 437573105}
 --- !u!1 &696634838
 GameObject:
   m_ObjectHideFlags: 0
@@ -64075,6 +64092,7 @@ MonoBehaviour:
   doorMaterial: {fileID: 2100000, guid: 7ee744a7325dd05428af629184b400ec, type: 2}
   transparent: {fileID: 2100000, guid: c5a65e46b95ff9844bd7400420508bf2, type: 2}
   door: {fileID: 1880074843}
+  count: 0
 --- !u!65 &1386024458
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -70634,7 +70652,7 @@ Transform:
   m_GameObject: {fileID: 1569615691}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.17, y: 0.85, z: 15.57}
+  m_LocalPosition: {x: -21.23, y: 0.85, z: 15.03}
   m_LocalScale: {x: 0.75, y: 0.75, z: 0.05}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -71301,7 +71319,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c08d7794bdabc6b4895159f6cd690317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panel1: {fileID: 916305055}
+  clockText: {fileID: 258652231}
+  camIcon: {fileID: 1656993429}
   panel2: {fileID: 1848843673}
   mainCamera: {fileID: 967899489}
   camera1: {fileID: 2075558916}
@@ -82794,7 +82813,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c08d7794bdabc6b4895159f6cd690317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panel1: {fileID: 916305055}
+  clockText: {fileID: 258652231}
+  camIcon: {fileID: 1656993429}
   panel2: {fileID: 1848843673}
   mainCamera: {fileID: 0}
   camera1: {fileID: 0}
@@ -85873,6 +85893,7 @@ MonoBehaviour:
   doorMaterial: {fileID: 2100000, guid: 7ee744a7325dd05428af629184b400ec, type: 2}
   transparent: {fileID: 2100000, guid: c5a65e46b95ff9844bd7400420508bf2, type: 2}
   door: {fileID: 1948031691}
+  count: 0
 --- !u!1 &1952983630
 GameObject:
   m_ObjectHideFlags: 0

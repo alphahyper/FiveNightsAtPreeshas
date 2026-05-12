@@ -8,7 +8,7 @@ public class DoorControls : MonoBehaviour
     public Material doorMaterial;
     public Material transparent;
     public MeshRenderer door;
-    public static int count = 0;
+    public int count = 0;
     public void OnMouseUpAsButton()
     {
         count=(count+1)%2;
@@ -30,6 +30,7 @@ public class DoorControls : MonoBehaviour
             {
                 MovementManager.backDoorClosed = true;
             }
+            Power.ChangeUsage(Power.usage + 1);
         }
         else
         {
@@ -46,6 +47,7 @@ public class DoorControls : MonoBehaviour
             {
                 MovementManager.backDoorClosed = false;
             }
+            Power.ChangeUsage(Power.usage - 1);
         }
     }
 }
