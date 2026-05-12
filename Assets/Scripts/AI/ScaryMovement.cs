@@ -19,7 +19,7 @@ public class Movement : MonoBehaviour
         roomIndices = new int[] {14,4,12,13,9,8,1,2};
         room = 0;
         MoveRoom(ref room);
-        minTime = 2f; maxTime = 3f;  // CHANGES TIMER
+        minTime = 7f; maxTime = 8f;  // CHANGES TIMER
         timeLeft = Random.Range(minTime, maxTime);
     }
 
@@ -31,6 +31,10 @@ public class Movement : MonoBehaviour
         {
             MoveRoom(ref room);
             timeLeft = Random.Range(minTime, maxTime);
+            if (room % roomIndices.Length == 0 )  // If AI reaches the office
+            {
+                Jumpscare();
+            }
         }
     }
 
@@ -46,5 +50,9 @@ public class Movement : MonoBehaviour
                 break;
             }
         }
+    }
+    void Jumpscare()
+    {
+
     }
 }

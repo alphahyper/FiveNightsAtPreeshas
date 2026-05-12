@@ -51084,6 +51084,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TPCafeteria
       objectReference: {fileID: 0}
+    - target: {fileID: 3121519572641665267, guid: e34328e0c6705d841b23bec4e67fb51c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4425899885069067880, guid: e34328e0c6705d841b23bec4e67fb51c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -69794,7 +69798,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51e9b5105f34ce54c82a918d72532efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 967899490}
 --- !u!114 &1569615696
 MonoBehaviour:
   m_ObjectHideFlags: 0
