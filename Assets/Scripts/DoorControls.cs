@@ -5,6 +5,9 @@ using UnityEngine;
 public class DoorControls : MonoBehaviour
 {
     // Start is called before the first frame update
+    [SerializeField] private AudioClip openSound;
+    [SerializeField] private AudioClip closeSound;
+    private AudioSource soundSource;
     public Material doorMaterial;
     public Material transparent;
     public MeshRenderer door;
@@ -12,10 +15,12 @@ public class DoorControls : MonoBehaviour
     public void OnMouseUpAsButton()
     {
         count=(count+1)%2;
-        Debug.Log(count);
+        soundSource = transform.parent.GetComponent<AudioSource>();
         if (count == 1)
         {
             door.material = doorMaterial;
+            soundSource.clip = closeSound;
+            soundSource.Play();
 
             // Allows AI to detect door closure
             if (door.name.Equals("Left Office Doorway Blocker"))
@@ -35,6 +40,10 @@ public class DoorControls : MonoBehaviour
         else
         {
             door.material = transparent;
+
+            soundSource.clip = openSound;
+            soundSource.Play();
+
             if (door.name.Equals("Left Office Doorway Blocker"))
             {
                 MovementManager.leftDoorClosed = false;
