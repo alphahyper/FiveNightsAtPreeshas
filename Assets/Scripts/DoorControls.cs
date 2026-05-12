@@ -8,7 +8,7 @@ public class DoorControls : MonoBehaviour
     public Material doorMaterial;
     public Material transparent;
     public MeshRenderer door;
-    public static int count = 0;
+    public int count = 0;
     public void OnMouseUpAsButton()
     {
         count=(count+1)%2;
@@ -16,10 +16,38 @@ public class DoorControls : MonoBehaviour
         if (count == 1)
         {
             door.material = doorMaterial;
+
+            // Allows AI to detect door closure
+            if (door.name.Equals("Left Office Doorway Blocker"))
+            {
+                MovementManager.leftDoorClosed = true;
+            }
+            else if (door.name.Equals("Right Office Doorway Blocker"))
+            {
+                MovementManager.rightDoorClosed = true;
+            }
+            else if (door.name.Equals("Back Office Doorway Blocker"))
+            {
+                MovementManager.backDoorClosed = true;
+            }
+            Power.ChangeUsage(Power.usage + 1);
         }
         else
         {
             door.material = transparent;
+            if (door.name.Equals("Left Office Doorway Blocker"))
+            {
+                MovementManager.leftDoorClosed = false;
+            }
+            else if (door.name.Equals("Right Office Doorway Blocker"))
+            {
+                MovementManager.rightDoorClosed = false;
+            }
+            else if (door.name.Equals("Back Office Doorway Blocker"))
+            {
+                MovementManager.backDoorClosed = false;
+            }
+            Power.ChangeUsage(Power.usage - 1);
         }
     }
 }

@@ -75,36 +75,16 @@ public class HUDManager : MonoBehaviour
         }
     }
 
-    
-    /* 
-     * TODO: add the appropriate HUD elements to the following four functions:
-     */
-
-    // Shows the HUD for the menu
-    public static void ShowMenuHUD()
-    {
-        clock.enabled = true;
-        power.enabled = true;
-    }
-    // Hides the HUD for the menu
-    public static void HideMenuHUD()
-    {
-        clock.enabled = false;
-        power.enabled = false;
-    }
+   
 
     // Shows the HUD for the actual gameplay
     public static void ShowOfficeHUD()
     {
-        clock.enabled = true;
-        power.enabled = true;
-        GameObject.Find("HUD").transform.Find("Panel").transform.Find("UsageText").gameObject.SetActive(true);
+        HUD.SetActive(true);
     }
     // Hides the HUD for the actual gameplay
     public static void HideOfficeHUD()
     {
-        clock.enabled = false;
-        power.enabled = false;
-        GameObject.Find("HUD").transform.Find("Panel").transform.Find("UsageText").gameObject.SetActive(false);
+        HUD.SetActive(false);
     }
 }

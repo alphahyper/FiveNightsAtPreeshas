@@ -6,7 +6,8 @@ using UnityEngine.UIElements;
 public class CameraControls : MonoBehaviour
 {
     public static int count = 1;
-    public GameObject panel1;
+    public GameObject clockText;
+    public GameObject camIcon;
     public GameObject panel2;
     public Camera mainCamera;
     public Camera camera1;
@@ -21,14 +22,17 @@ public class CameraControls : MonoBehaviour
     public void ActivateCameras()
     {
         
-        panel1.SetActive(false);
+        clockText.SetActive(false);
+        camIcon.SetActive(false);
         panel2.SetActive(true);
+        Power.ChangeUsage(Power.usage + 1);
         SwitchCamera();
     }
 
     public void DeactivateCameras()
     {
-        panel1.SetActive(true);
+        clockText.SetActive(true);
+        camIcon.SetActive(true);
         panel2.SetActive(false);
         camera1.enabled = false;
         camera2.enabled = false;
@@ -40,6 +44,7 @@ public class CameraControls : MonoBehaviour
         camera8.enabled = false;
         camera9.enabled = false;
         mainCamera.enabled = true;
+        Power.ChangeUsage(Power.usage - 1);
         FaceCamera.ChangeCurrentCamera(Camera.main.transform);
     }
 
