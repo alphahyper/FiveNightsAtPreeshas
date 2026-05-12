@@ -10,6 +10,8 @@ using Random = UnityEngine.Random;
 
 public class SargsyanMovement : MonoBehaviour
 {
+    [SerializeField] private AudioClip jumpscareSound;
+    private AudioSource jumpscareSource;
     public static bool isScaring;
     public GameObject sargsyanFace;
     private int[] roomIndices;
@@ -20,6 +22,8 @@ public class SargsyanMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        jumpscareSource = GetComponent<AudioSource>();
+        jumpscareSource.clip = jumpscareSound;
         isScaring = false;
         roomIndices = new int[] {15,10,4,3,7,0,5,-1};
         room = 0;
@@ -67,6 +71,7 @@ public class SargsyanMovement : MonoBehaviour
         isScaring = true;
         HUDManager.HideOfficeHUD();
         sargsyanFace.SetActive(true);
+        jumpscareSource.Play();
         await Task.Delay(3000);
         SceneManager.LoadScene("Game Over Screen");
     }

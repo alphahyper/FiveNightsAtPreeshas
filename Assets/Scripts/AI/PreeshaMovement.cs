@@ -10,6 +10,8 @@ using Random = UnityEngine.Random;
 
 public class Movement : MonoBehaviour
 {
+    [SerializeField] private AudioClip jumpscareSound;
+    private AudioSource jumpscareSource;
     public static bool isScaring;
     public GameObject preeshaFace;
     private int[] roomIndices;
@@ -20,7 +22,8 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        jumpscareSource = GetComponent<AudioSource>();
+        jumpscareSource.clip = jumpscareSound;
         isScaring = false;
         roomIndices = new int[] {14,13,12,9,8,1,2,-1};
         room = 0;
@@ -67,6 +70,7 @@ public class Movement : MonoBehaviour
         isScaring = true;
         HUDManager.HideOfficeHUD();
         preeshaFace.SetActive(true);
+        jumpscareSource.Play();
         await Task.Delay(3000);
         SceneManager.LoadScene("Game Over Screen");
     }
