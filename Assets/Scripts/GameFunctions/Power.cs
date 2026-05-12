@@ -7,6 +7,7 @@ public class Power : MonoBehaviour
     static float power;
     static int powerLeft;
     public static int usage;
+    static float[] usages = new float[6];
     static bool startCount = false;
     // Start is called before the first frame update
     void Start()
@@ -40,6 +41,7 @@ public class Power : MonoBehaviour
         power = 100.00f;
         powerLeft = 99;
         usage = 1;
+        usages = new float[] { 0f, 0.2f, 0.5f, 1f, 1.8f, 2.5f };
         ChangeUsage(usage);
         startCount = true;
     }

@@ -25,6 +25,7 @@ public class CameraControls : MonoBehaviour
         clockText.SetActive(false);
         camIcon.SetActive(false);
         panel2.SetActive(true);
+        //CameraController.cursorLocked = false;
         Power.ChangeUsage(Power.usage + 1);
         SwitchCamera();
     }
@@ -34,6 +35,7 @@ public class CameraControls : MonoBehaviour
         clockText.SetActive(true);
         camIcon.SetActive(true);
         panel2.SetActive(false);
+        //CameraController.cursorLocked = true;
         camera1.enabled = false;
         camera2.enabled = false;
         camera3.enabled = false;

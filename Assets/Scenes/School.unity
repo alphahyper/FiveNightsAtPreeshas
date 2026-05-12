@@ -26592,8 +26592,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 217.0069, y: 136.50345}
-  m_SizeDelta: {x: 803.7036, y: 500.2425}
+  m_AnchoredPosition: {x: 234.88974, y: 135.81566}
+  m_SizeDelta: {x: 869.4796, y: 497.7127}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!43 &586273917
 Mesh:
@@ -33236,6 +33236,7 @@ GameObject:
   - component: {fileID: 694459978}
   - component: {fileID: 694459977}
   - component: {fileID: 694459981}
+  - component: {fileID: 694459982}
   m_Layer: 0
   m_Name: Sargsyan
   m_TagString: Untagged
@@ -33285,7 +33286,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5089438eca2685d4fb7b3c4f60f729ee, type: 2}
+  - {fileID: 2100000, guid: 89450d74c3fc8c64c8a00a9d15851b8e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -33334,7 +33335,105 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dc4738ea1d920548a071e673b8770e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpscareSound: {fileID: 8300000, guid: d2e3349770724294fb3fcb19b1c00a80, type: 3}
   sargsyanFace: {fileID: 437573105}
+--- !u!82 &694459982
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694459975}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &696634838
 GameObject:
   m_ObjectHideFlags: 0
@@ -46394,6 +46493,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1536360142}
+  mouseSensitivity: 5
+  cursorLocked: 1
   offset: {x: 0, y: 0.85, z: 0}
   rotationSpeed: 20
 --- !u!114 &967899492
@@ -72671,7 +72772,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -87477,7 +87578,6 @@ GameObject:
   - component: {fileID: 1948031692}
   - component: {fileID: 1948031691}
   - component: {fileID: 1948031690}
-  - component: {fileID: 1948031694}
   m_Layer: 0
   m_Name: Left Office Doorway Blocker
   m_TagString: Untagged
@@ -87573,24 +87673,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 25296903}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1948031694
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1948031689}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee546fdfc3b1b2047b126be8a02b53c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  openSound: {fileID: 0}
-  closeSound: {fileID: 0}
-  doorMaterial: {fileID: 2100000, guid: 7ee744a7325dd05428af629184b400ec, type: 2}
-  transparent: {fileID: 2100000, guid: c5a65e46b95ff9844bd7400420508bf2, type: 2}
-  door: {fileID: 1948031691}
-  count: 0
 --- !u!1 &1952983630
 GameObject:
   m_ObjectHideFlags: 0
@@ -91383,12 +91465,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
