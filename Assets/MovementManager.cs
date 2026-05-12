@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class MovementManager : MonoBehaviour
 {
+    public static bool leftDoorClosed;
+    public static bool rightDoorClosed;
+    public static bool backDoorClosed;
     public static Transform[] rooms;
     public static Dictionary<int, string> roomPairs;  // A dictionary of all rooms and their indexes (indices can be changed each mvt script)
     // Start is called before the first frame update
     void Start()
     {
+        leftDoorClosed = false; rightDoorClosed = false; backDoorClosed = false;
+
         rooms = GameObject.Find("Teleportation Points").GetComponentsInChildren<Transform>();
         roomPairs = new Dictionary<int, string>();
+        roomPairs.Add(-1, "Office");
         roomPairs.Add(0, "TPServer");
         roomPairs.Add(1, "TPScience");
         roomPairs.Add(2, "TPScience2");
@@ -27,11 +33,5 @@ public class MovementManager : MonoBehaviour
         roomPairs.Add(13, "TPMath");
         roomPairs.Add(14, "TPEntrance");
         roomPairs.Add(15, "TPLounge");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

@@ -16,10 +16,36 @@ public class DoorControls : MonoBehaviour
         if (count == 1)
         {
             door.material = doorMaterial;
+
+            // Allows AI to detect door closure
+            if (door.name.Equals("Left Office Doorway Blocker"))
+            {
+                MovementManager.leftDoorClosed = true;
+            }
+            else if (door.name.Equals("Right Office Doorway Blocker"))
+            {
+                MovementManager.rightDoorClosed = true;
+            }
+            else if (door.name.Equals("Back Office Doorway Blocker"))
+            {
+                MovementManager.backDoorClosed = true;
+            }
         }
         else
         {
             door.material = transparent;
+            if (door.name.Equals("Left Office Doorway Blocker"))
+            {
+                MovementManager.leftDoorClosed = false;
+            }
+            else if (door.name.Equals("Right Office Doorway Blocker"))
+            {
+                MovementManager.rightDoorClosed = false;
+            }
+            else if (door.name.Equals("Back Office Doorway Blocker"))
+            {
+                MovementManager.backDoorClosed = false;
+            }
         }
     }
 }

@@ -2,12 +2,16 @@ using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEditor;
-using Random = UnityEngine.Random;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
-public class Movement : MonoBehaviour
+public class SargsyanMovement : MonoBehaviour
 {
+    public static bool isScaring;
+    public GameObject sargsyanFace;
     private int[] roomIndices;
     private int room;
     private Vector3 roomPos;
@@ -16,10 +20,11 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        roomIndices = new int[] {14,4,12,13,9,8,1,2};
+        isScaring = false;
+        roomIndices = new int[] { 15,10,4,3,7,0,5,-1};
         room = 0;
         MoveRoom(ref room);
-        minTime = 7f; maxTime = 8f;  // CHANGES TIMER
+        minTime = 1f; maxTime = 2f;  // CHANGES TIMER
         timeLeft = Random.Range(minTime, maxTime);
     }
 
@@ -31,9 +36,15 @@ public class Movement : MonoBehaviour
         {
             MoveRoom(ref room);
             timeLeft = Random.Range(minTime, maxTime);
-            if (room % roomIndices.Length == 0 )  // If AI reaches the office
+            if (room % roomIndices.Length == 0)  // If AI reaches the office
             {
-                Jumpscare();
+                if (MovementManager.rightDoorClosed == false)
+                {
+                    if (!Movement.isScaring)
+                    {
+                        Jumpscare();
+                    }
+                }
             }
         }
     }
@@ -51,8 +62,12 @@ public class Movement : MonoBehaviour
             }
         }
     }
-    void Jumpscare()
+    async void Jumpscare()
     {
-
+        isScaring = true;
+        HUDManager.HideOfficeHUD();
+        sargsyanFace.SetActive(true);
+        await Task.Delay(3000);
+        SceneManager.LoadScene("Game Over Screen");
     }
 }
