@@ -24,6 +24,7 @@ public class FadeScript : MonoBehaviour
         await Task.Delay(8000);
         SceneManager.LoadScene("School");  // Loads school, then waits and loads night
         await Task.Delay(200);
+        Time.timeScale = 1;
         GameManager.StartNight(GameManager.night++);
     }
 
