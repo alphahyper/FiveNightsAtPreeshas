@@ -43,5 +43,6 @@ public class GameManager : MonoBehaviour
     public static void FinishNight()
     {
         HUDManager.HideOfficeHUD();  // Hides office HUD
+        SceneManager.LoadScene("Congratulations Screen");
     }
 }

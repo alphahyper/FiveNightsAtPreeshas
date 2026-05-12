@@ -27,7 +27,7 @@ public class SargsyanMovement : MonoBehaviour
         isScaring = false;
         roomIndices = new int[] {15,10,4,3,7,0,5,-1};
         room = 0;
-        minTime = 1f; maxTime = 2f;  // CHANGES TIMER
+        minTime = 2f; maxTime = 3f;  // CHANGES TIMER
         timeLeft = Random.Range(minTime, maxTime);
     }
 
