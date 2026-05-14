@@ -1990,6 +1990,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 23072247148951056, guid: c46afe706fb2cde4883f7afaeaa67a78, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c5a65e46b95ff9844bd7400420508bf2, type: 2}
+    - target: {fileID: 23072247148951056, guid: c46afe706fb2cde4883f7afaeaa67a78, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c5a65e46b95ff9844bd7400420508bf2, type: 2}
+    - target: {fileID: 23072247148951056, guid: c46afe706fb2cde4883f7afaeaa67a78, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c5a65e46b95ff9844bd7400420508bf2, type: 2}
+    - target: {fileID: 23072247148951056, guid: c46afe706fb2cde4883f7afaeaa67a78, type: 3}
+      propertyPath: 'm_Materials.Array.data[3]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c5a65e46b95ff9844bd7400420508bf2, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22324,9 +22340,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openSound: {fileID: 8300000, guid: 072c16e7733e39c4e9f97f124dade8dd, type: 3}
   closeSound: {fileID: 8300000, guid: 596c95c5173b9a744a71e39738a2eef7, type: 3}
-  doorMaterial: {fileID: 2100000, guid: 7ee744a7325dd05428af629184b400ec, type: 2}
+  doorMaterial: {fileID: 2100000, guid: 30b92673b9b7ef44c9c11a474d9910c9, type: 2}
   transparent: {fileID: 2100000, guid: c5a65e46b95ff9844bd7400420508bf2, type: 2}
-  door: {fileID: 195066158}
+  door: {fileID: 761626066}
   count: 0
 --- !u!65 &472898740
 BoxCollider:
@@ -29401,9 +29417,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openSound: {fileID: 8300000, guid: 072c16e7733e39c4e9f97f124dade8dd, type: 3}
   closeSound: {fileID: 8300000, guid: 596c95c5173b9a744a71e39738a2eef7, type: 3}
-  doorMaterial: {fileID: 2100000, guid: 7ee744a7325dd05428af629184b400ec, type: 2}
+  doorMaterial: {fileID: 2100000, guid: 30b92673b9b7ef44c9c11a474d9910c9, type: 2}
   transparent: {fileID: 2100000, guid: c5a65e46b95ff9844bd7400420508bf2, type: 2}
-  door: {fileID: 1948031691}
+  door: {fileID: 1476693305}
   count: 0
 --- !u!1 &622070035
 GameObject:
@@ -35228,6 +35244,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!23 &720847572 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 23072247148951056, guid: c46afe706fb2cde4883f7afaeaa67a78, type: 3}
+  m_PrefabInstance: {fileID: 1514670942}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &724654662
 Mesh:
   m_ObjectHideFlags: 0
@@ -37448,6 +37469,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!23 &761626066 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 23072247148951056, guid: c46afe706fb2cde4883f7afaeaa67a78, type: 3}
+  m_PrefabInstance: {fileID: 32648929}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &767227710
 Mesh:
   m_ObjectHideFlags: 0
@@ -65382,9 +65408,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openSound: {fileID: 8300000, guid: 072c16e7733e39c4e9f97f124dade8dd, type: 3}
   closeSound: {fileID: 8300000, guid: 596c95c5173b9a744a71e39738a2eef7, type: 3}
-  doorMaterial: {fileID: 2100000, guid: 7ee744a7325dd05428af629184b400ec, type: 2}
+  doorMaterial: {fileID: 2100000, guid: 30b92673b9b7ef44c9c11a474d9910c9, type: 2}
   transparent: {fileID: 2100000, guid: c5a65e46b95ff9844bd7400420508bf2, type: 2}
-  door: {fileID: 1880074843}
+  door: {fileID: 720847572}
   count: 0
 --- !u!65 &1386024458
 BoxCollider:
@@ -68318,6 +68344,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!23 &1476693305 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 23072247148951056, guid: c46afe706fb2cde4883f7afaeaa67a78, type: 3}
+  m_PrefabInstance: {fileID: 1604690503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1485525923
 Mesh:
   m_ObjectHideFlags: 0
@@ -69067,6 +69098,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 23072247148951056, guid: c46afe706fb2cde4883f7afaeaa67a78, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c5a65e46b95ff9844bd7400420508bf2, type: 2}
+    - target: {fileID: 23072247148951056, guid: c46afe706fb2cde4883f7afaeaa67a78, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c5a65e46b95ff9844bd7400420508bf2, type: 2}
+    - target: {fileID: 23072247148951056, guid: c46afe706fb2cde4883f7afaeaa67a78, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c5a65e46b95ff9844bd7400420508bf2, type: 2}
+    - target: {fileID: 23072247148951056, guid: c46afe706fb2cde4883f7afaeaa67a78, type: 3}
+      propertyPath: 'm_Materials.Array.data[3]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c5a65e46b95ff9844bd7400420508bf2, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -74340,6 +74387,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: a door
       objectReference: {fileID: 0}
+    - target: {fileID: 1965528337302418, guid: c46afe706fb2cde4883f7afaeaa67a78, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4173873760860446, guid: c46afe706fb2cde4883f7afaeaa67a78, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.7108632
@@ -74391,6 +74442,26 @@ PrefabInstance:
     - target: {fileID: 4173873760860446, guid: c46afe706fb2cde4883f7afaeaa67a78, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23072247148951056, guid: c46afe706fb2cde4883f7afaeaa67a78, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c5a65e46b95ff9844bd7400420508bf2, type: 2}
+    - target: {fileID: 23072247148951056, guid: c46afe706fb2cde4883f7afaeaa67a78, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c5a65e46b95ff9844bd7400420508bf2, type: 2}
+    - target: {fileID: 23072247148951056, guid: c46afe706fb2cde4883f7afaeaa67a78, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c5a65e46b95ff9844bd7400420508bf2, type: 2}
+    - target: {fileID: 23072247148951056, guid: c46afe706fb2cde4883f7afaeaa67a78, type: 3}
+      propertyPath: 'm_Materials.Array.data[3]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c5a65e46b95ff9844bd7400420508bf2, type: 2}
+    - target: {fileID: 7219536460378865218, guid: c46afe706fb2cde4883f7afaeaa67a78, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
