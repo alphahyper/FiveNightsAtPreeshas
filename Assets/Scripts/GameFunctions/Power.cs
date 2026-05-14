@@ -23,7 +23,7 @@ public class Power : MonoBehaviour
     {
         if (startCount == true)
         {
-            power -= Time.deltaTime * usage;  // The increment of power usage
+            power -= Time.deltaTime * usage/5f;  // The increment of power usage
             if (power < powerLeft)
             {
                 HUDManager.ChangePower(powerLeft--);  // Always checks if power is less than powerLeft, then changes HUD
