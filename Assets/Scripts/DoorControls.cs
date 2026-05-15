@@ -23,15 +23,15 @@ public class DoorControls : MonoBehaviour
             soundSource.Play();
 
             // Allows AI to detect door closure
-            if (door.name.Equals("Left Office Doorway Blocker"))
+            if (door.name.Equals("Left Mesh"))
             {
                 MovementManager.leftDoorClosed = true;
             }
-            else if (door.name.Equals("Right Office Doorway Blocker"))
+            else if (door.name.Equals("Right Mesh"))
             {
                 MovementManager.rightDoorClosed = true;
             }
-            else if (door.name.Equals("Back Office Doorway Blocker"))
+            else if (door.name.Equals("Back Mesh"))
             {
                 MovementManager.backDoorClosed = true;
             }
@@ -44,15 +44,15 @@ public class DoorControls : MonoBehaviour
             soundSource.clip = openSound;
             soundSource.Play();
 
-            if (door.name.Equals("Left Office Doorway Blocker"))
+            if (door.name.Equals("Left Mesh"))
             {
                 MovementManager.leftDoorClosed = false;
             }
-            else if (door.name.Equals("Right Office Doorway Blocker"))
+            else if (door.name.Equals("Right Mesh"))
             {
                 MovementManager.rightDoorClosed = false;
             }
-            else if (door.name.Equals("Back Office Doorway Blocker"))
+            else if (door.name.Equals("Back Mesh"))
             {
                 MovementManager.backDoorClosed = false;
             }

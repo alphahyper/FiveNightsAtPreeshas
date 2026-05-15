@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
+
 public class CameraControls : MonoBehaviour
 {
-    public static int count = 1;
+    public static int count = 0;
+    public static int qCount = 0;
     public GameObject clockText;
     public GameObject camIcon;
     public GameObject panel2;
@@ -19,19 +21,55 @@ public class CameraControls : MonoBehaviour
     public Camera camera7;
     public Camera camera8;
     public Camera camera9;
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (count % 2 == 0)
+            {
+                ActivateCameras();
+            }
+            else
+            {
+                DeactivateCameras();
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            if (count % 2 == 0)
+            {
+                UnityEngine.Cursor.lockState = CursorLockMode.None;
+                UnityEngine.Cursor.visible = true;
+                count++;
+            }
+            else
+            {
+                UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+                count++;
+            }
+            
+        }
+    }
     public void ActivateCameras()
     {
+        count++;
+        UnityEngine.Cursor.lockState = CursorLockMode.None;
+        UnityEngine.Cursor.visible = true;
+        CameraController.cursorLocked = false;
         
         clockText.SetActive(false);
         camIcon.SetActive(false);
         panel2.SetActive(true);
-        //CameraController.cursorLocked = false;
         Power.ChangeUsage(Power.usage + 1);
-        SwitchCamera();
+        SwitchCamera("Entrance Camera");
     }
 
     public void DeactivateCameras()
     {
+        count++;
+        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+        CameraController.cursorLocked = true;
         clockText.SetActive(true);
         camIcon.SetActive(true);
         panel2.SetActive(false);
@@ -50,84 +88,76 @@ public class CameraControls : MonoBehaviour
         FaceCamera.ChangeCurrentCamera(Camera.main.transform);
     }
 
-    public void RightCamera()
+    /*public void RightCamera()
     {
         count++;
-        SwitchCamera();
+        SwitchCamera("a");
         count = ((count % 9) + 9) % 9;
     }
 
     public void LeftCamera()
     {
         count--;
-        SwitchCamera();
+        SwitchCamera("a");
         count = ((count % 9) + 9) % 9;
-    }
+    }*/
 
-    public void SwitchCamera()
+    public void SwitchCamera(string cam)
     {
-        if (count % 9 == 0)
+        camera1.enabled = false;
+        camera2.enabled = false;
+        camera3.enabled = false;
+        camera4.enabled = false;
+        camera5.enabled = false;
+        camera6.enabled = false;
+        camera7.enabled = false;
+        camera8.enabled = false;
+        camera9.enabled = false;
+        if (cam.Equals("Office Camera"))
         {
             camera1.enabled = true;
-            camera9.enabled = false;
-            camera2.enabled = false;
             FaceCamera.ChangeCurrentCamera(camera1.transform);
         }
-        else if (count % 9 == 1)
+        else if (cam.Equals("Science Camera"))
         {
             camera2.enabled = true;
-            camera1.enabled = false;
-            camera3.enabled = false;
             FaceCamera.ChangeCurrentCamera(camera2.transform);
         }
-        else if (count % 9 == 2)
+        else if (cam.Equals("Server Camera"))
         {
             camera3.enabled = true;
-            camera2.enabled = false;
-            camera4.enabled = false;
             FaceCamera.ChangeCurrentCamera(camera3.transform);
         }
-        else if (count % 9 == 3)
+        else if (cam.Equals("DECAMart Camera"))
         {
             camera4.enabled = true;
-            camera3.enabled = false;
-            camera5.enabled = false;
             FaceCamera.ChangeCurrentCamera(camera4.transform);
         }
-        else if (count % 9 == 4)
+        else if (cam.Equals("Teacher Lounge Camera"))
         {
             camera5.enabled = true;
-            camera4.enabled = false;
-            camera6.enabled = false;
             FaceCamera.ChangeCurrentCamera(camera5.transform);
         }
-        else if (count % 9 == 5)
+        else if (cam.Equals("Entrance Camera"))
         {
             camera6.enabled = true;
-            camera5.enabled = false;
-            camera7.enabled = false;
             FaceCamera.ChangeCurrentCamera(camera6.transform);
         }
-        else if (count % 9 == 6)
+        else if (cam.Equals("Math Camera"))
         {
             camera7.enabled = true;
-            camera6.enabled = false;
-            camera8.enabled = false;
             FaceCamera.ChangeCurrentCamera(camera7.transform);
         }
-        else if (count % 9 == 7)
-        {
+        else if (cam.Equals("English Camera"))
+        {   
             camera8.enabled = true;
-            camera7.enabled = false;
-            camera9.enabled = false;
             FaceCamera.ChangeCurrentCamera(camera8.transform);
         }
-        else if (count % 9 == 8)
+        else if (cam.Equals("Cafeteria Camera"))
         {
             camera9.enabled = true;
-            camera8.enabled = false;
-            camera1.enabled = false;
             FaceCamera.ChangeCurrentCamera(camera9.transform);
         }
+        
     }
 }
