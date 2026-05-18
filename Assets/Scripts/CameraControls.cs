@@ -37,16 +37,16 @@ public class CameraControls : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            if (count % 2 == 0)
+            if (qCount % 2 == 0)
             {
                 UnityEngine.Cursor.lockState = CursorLockMode.None;
                 UnityEngine.Cursor.visible = true;
-                count++;
+                qCount++;
             }
             else
             {
                 UnityEngine.Cursor.lockState = CursorLockMode.Locked;
-                count++;
+                qCount++;
             }
             
         }
