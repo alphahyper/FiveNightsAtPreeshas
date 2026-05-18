@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -30,10 +31,11 @@ public class GameManager : MonoBehaviour
 
 
     // Starts the night that is listed
-    public static void StartNight(int num)
+    async public static void StartNight(int num)
     {
         night = num;
         HUDManager.LoadOfficeHUD();
+        await Task.Delay(200);
         Clock.Restart();
         Power.Restart();
     }
@@ -43,5 +45,6 @@ public class GameManager : MonoBehaviour
     public static void FinishNight()
     {
         HUDManager.HideOfficeHUD();  // Hides office HUD
+        SceneManager.LoadScene("Congratulations Screen");
     }
 }
