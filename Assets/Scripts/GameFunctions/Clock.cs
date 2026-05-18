@@ -19,7 +19,7 @@ public class Clock : MonoBehaviour
         if (startCount == true)
         {
             clockTime += Time.deltaTime;
-            // Every 30 sec is 1 hour in-game
+            // Every 20 sec is 1 hour in-game
             if (clockTime >= 20f)
             {
                 hourDisplay += 1;

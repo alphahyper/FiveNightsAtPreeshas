@@ -24,7 +24,7 @@ public class CameraControls : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && Power.startCount == true)
         {
             if (count % 2 == 0)
             {
@@ -49,6 +49,10 @@ public class CameraControls : MonoBehaviour
                 qCount++;
             }
             
+        }
+        if (Power.startCount == false && count >= 1)
+        {
+            DeactivateCameras();
         }
     }
     public void ActivateCameras()
