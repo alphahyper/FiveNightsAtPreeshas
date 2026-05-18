@@ -78446,7 +78446,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1965528337302418, guid: c46afe706fb2cde4883f7afaeaa67a78, type: 3}
       propertyPath: m_Name
-      value: 'Left Door '
+      value: Left Door
       objectReference: {fileID: 0}
     - target: {fileID: 1965528337302418, guid: c46afe706fb2cde4883f7afaeaa67a78, type: 3}
       propertyPath: m_IsActive

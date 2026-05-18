@@ -40,6 +40,20 @@ public class GameManager : MonoBehaviour
         Power.Restart();
     }
 
+    public static void PowerOut()
+    {
+        HUDManager.HideOfficeHUD();
+        Transform leftDoor = GameObject.Find("Doors").transform.Find("Left Door");
+        Transform rightDoor = GameObject.Find("Doors").transform.Find("Right Door");
+        Transform backDoor = GameObject.Find("Doors").transform.Find("Back Door");
+        leftDoor.gameObject.SetActive(false);
+        rightDoor.gameObject.SetActive(false);
+        backDoor.gameObject.SetActive(false);
+        MovementManager.backDoorClosed = false;
+        MovementManager.leftDoorClosed = false;
+        MovementManager.rightDoorClosed = false;
+    }
+
     // TODO: Finish this when HUD has been made
     // Tells the game to complete the night
     public static void FinishNight()

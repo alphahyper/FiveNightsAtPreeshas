@@ -8,7 +8,7 @@ public class Power : MonoBehaviour
     static int powerLeft;
     public static int usage;
     static float[] usages = new float[6];
-    static bool startCount = false;
+    public static bool startCount = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +23,7 @@ public class Power : MonoBehaviour
     {
         if (startCount == true)
         {
-            power -= Time.deltaTime * usage/2f;  // The increment of power usage
+            power -= Time.deltaTime * usage/2.5f;  // The increment of power usage
             if (power < powerLeft)
             {
                 HUDManager.ChangePower(powerLeft--);  // Always checks if power is less than powerLeft, then changes HUD
@@ -32,7 +32,7 @@ public class Power : MonoBehaviour
             if (power < 0)  // When power runs out
             {
                 startCount = false;
-                // ** send signal to stop doors, cameras, and lights **
+                GameManager.PowerOut();
             }
         }
     }

@@ -14,6 +14,7 @@ public class DoorControls : MonoBehaviour
     public int count = 0;
     public void OnMouseUpAsButton()
     {
+        if (Power.startCount == false) { return; }
         count=(count+1)%2;
         soundSource = transform.parent.GetComponent<AudioSource>();
         if (count == 1)

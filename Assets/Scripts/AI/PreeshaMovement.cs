@@ -27,7 +27,7 @@ public class Movement : MonoBehaviour
         isScaring = false;
         roomIndices = new int[] {14,13,12,9,8,1,2,-1};
         room = 0;
-        minTime = 6f; maxTime = 10f;  // CHANGES TIMER
+        minTime = 6f; maxTime = 8f;  // CHANGES TIMER
         timeLeft = Random.Range(minTime, maxTime);
     }
 
