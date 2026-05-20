@@ -18,6 +18,8 @@ public class CongratsScript : MonoBehaviour
         Invoke(nameof(FadesIn), 1f);
         Invoke(nameof(FadesOut), 5f);
         await Task.Delay(8000);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         SceneManager.LoadScene("Title Screen");
     }
 
